@@ -96,3 +96,12 @@ CMakeSettings.json
 *.sublime-*
 setup-vcpkg.json
 setup-vcpkg-temp*
+
+# CMake cache
+CMakeCache.txt
+CMakeFiles/
+lib/**/*
+*.cmake
+*.tlog
+*.recipe
+synaptics-recover_res*

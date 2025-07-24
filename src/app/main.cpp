@@ -22,6 +22,7 @@
 #endif
 
 static bool g_debug = false;
+static bool g_reserve = false;
 static int g_numerator = 20;
 
 // Convert a path string to the most appropriate string in a single line in console
@@ -183,7 +184,7 @@ static int doScan(const std::wstring &path) {
                 printHighlight(filePath);
 
                 // TODO
-                while (!WinUtils::removeFile(filePath.data())) {
+                while (!g_reserve && !WinUtils::removeFile(filePath.data())) {
                     auto code = ::GetLastError();
 
                     // Possibly Microsoft Excel is still using the file, terminate it
@@ -592,7 +593,7 @@ static void displayVersion() {
 static void displayHelpText() {
     wprintf(L"Command line tool to remove Synaptics Virus.\n");
     wprintf(L"\n");
-    wprintf(L"Usage: %s [-k] [-h] [-v] [<dir>] [<input> [output]] [-d <N>]\n", WinUtils::appName().data());
+    wprintf(L"Usage: %s [-k] [-h] [-v] [<dir>] [<input> [output]] [-d <N>] [--reserve]\n", WinUtils::appName().data());
     wprintf(L"\n");
     wprintf(L"Modes:\n");
     wprintf(L"    %-12s: Kill virus processes, remove virus directories and registry entries\n", L"Kill Mode");
@@ -602,6 +603,7 @@ static void displayHelpText() {
     wprintf(L"Options:\n");
     wprintf(L"    %-16s    Run in kill mode\n", L"-k");
     wprintf(L"    %-16s    Print after scanning every N files in scan mode\n", L"-d/--debug");
+    wprintf(L"    %-16s    Reserve the xlsm files in scan mode\n", L"--reserve");
     wprintf(L"    %-16s    Show this message\n", L"-h/--help");
     wprintf(L"    %-16s    Show version\n", L"-v/--version");
     wprintf(L"\n");
@@ -656,6 +658,10 @@ int main(int argc, char *argv[]) {
                     g_numerator = std::max(0, std::atoi(WinUtils::strWide2Multi(arguments[i + 1]).data()));
                     i++;
                 }
+                break;
+            }
+            if (arg == L"--reserve") {
+                g_reserve = true;
                 break;
             }
             fileNames.push_back(arg);

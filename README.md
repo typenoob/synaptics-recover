@@ -21,6 +21,7 @@ Modes:
 Options:
     -k                  Run in kill mode
     -d/--debug          Print after scanning every N files in scan mode
+    --reserve           Reserve the xlsm files in scan mode
     -h/--help           Show this message
     -v/--version        Show version
 ```

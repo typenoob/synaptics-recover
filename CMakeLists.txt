@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.17)
 
-project(synaptics-recover VERSION 0.0.1.6-typenoob-version LANGUAGES CXX)
+project(synaptics-recover VERSION 0.0.1.6 LANGUAGES CXX)
+set(PROJECT_VERSION_SUFFIX "typenoob-version")
 
 if(NOT DEFINED CMAKE_RUNTIME_OUTPUT_DIRECTORY)
     set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)

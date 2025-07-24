@@ -4,6 +4,7 @@ add_executable(${PROJECT_NAME} ${_src} WinManifest.exe.manifest)
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE
     APP_VERSION="${PROJECT_VERSION}"
+    SUB_VERSION="${PROJECT_VERSION_SUFFIX}"
 )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE synare shlwapi)

@@ -588,6 +588,7 @@ static int doKill() {
 
 static void displayVersion() {
     wprintf(L"%s\n", TEXT(APP_VERSION));
+    wprintf(L"%s\n", TEXT(SUB_VERSION));
 }
 
 static void displayHelpText() {

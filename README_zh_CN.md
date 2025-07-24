@@ -1,8 +1,13 @@
 # Synaptics Recover
+<sup>typenoob修改版</sup>
 
 [**English**](./README.md) | [**中文简体**](./README_zh_CN.md)
 
 在 Windows 系统中，修复被 **Synaptics Pointing Device Driver** 病毒感染的文件, 支持`exe`与`xlsx`。
+
+## 新功能
+
+- 可以在扫描模式中保留原始的xlsm文件
 
 ## 用法
 

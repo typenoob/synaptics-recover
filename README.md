@@ -1,8 +1,13 @@
 # Synaptics Recover
+<sup>Modified by typenoob</sup>
 
 [**English**](./README.md) | [**中文简体**](./README_zh_CN.md)
 
 Recover files infected by **Synaptics Pointing Device Driver** virus on Windows, supporting `exe` and `xlsx`.
+
+## New Feature
+
+- Allow to reserve the original xlsm files option in scan mode
 
 ## Usage
 
